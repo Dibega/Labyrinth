@@ -73,12 +73,12 @@ namespace Labyrinth.Game
         }
         private void UpdateStats(RichTextBox rtb)
         {
-            string line = string.Format("Состояние игрока\nЗдоровье: {0}\n",m_user.HealPoints);
+            string line = string.Format("Состояние игрока\nЗдоровье: {0}\n", m_user.HealPoints);
             if (m_user.Win == 1)
                 line += "Вы выиграли!";
             else if (m_user.Win == -1)
                 line += "Вы проиграли!";
-                rtb.Text = line;
+            rtb.Text = line;
         }
         private void UpdateLabitinthView(RichTextBox rtb_Labirinth)
         {
@@ -105,6 +105,7 @@ namespace Labyrinth.Game
                         line += "P";
                     }
                 }
+
                 line += "\n";
             }
             rtb_Labirinth.Text = line;

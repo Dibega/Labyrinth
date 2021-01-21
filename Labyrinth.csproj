@@ -59,6 +59,7 @@
     <Compile Include="Game\Friend.cs" />
     <Compile Include="Game\RandomMove.cs" />
     <Compile Include="Game\RunGame.cs" />
+    <Compile Include="Game\StaticRnd.cs" />
     <Compile Include="Labirinth Form.cs">
       <SubType>Form</SubType>
     </Compile>
