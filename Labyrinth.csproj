@@ -80,6 +80,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\FriendTest.cs" />
+    <Compile Include="Tests\GameTest.cs" />
     <EmbeddedResource Include="Labirinth Form.resx">
       <DependentUpon>Labirinth Form.cs</DependentUpon>
     </EmbeddedResource>

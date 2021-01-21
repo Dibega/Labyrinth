@@ -21,6 +21,11 @@ namespace Labyrinth.Game
             PointLabirinth newPoint = user.Location;
             newPoint.x += x;
             newPoint.y += y;
+            if (newPoint.x > m_labirinth.GetUpperBound(0) || newPoint.x < m_labirinth.GetLowerBound(0) ||
+                newPoint.y > m_labirinth.GetUpperBound(1) || newPoint.y < m_labirinth.GetLowerBound(1))
+            {
+                return;
+            }
 
             IInteractable l = m_labirinth[newPoint.x, newPoint.y];
             if (l != null)

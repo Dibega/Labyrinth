@@ -15,5 +15,12 @@ namespace Labyrinth.Tests
             friend.Interact(player);
             Assert.That(hp, Is.Not.EqualTo(player.HealPoints));
         }
+        [Test]
+        public void FriendSymbol()
+        {
+            Friend friend = new Friend(new PointLabirinth(0, 0), new IInteractable[,] { { null } });
+            Assert.That(friend.Symbol, Is.EqualTo('F'));
+        }
+
     }
 }

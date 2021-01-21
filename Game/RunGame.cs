@@ -17,16 +17,19 @@ namespace Labyrinth.Game
 
         public void Init(List<RichTextBox> rtb_List)
         {
-            m_stateGame = 1;
-            m_labirinth = ReadWallsFromFileInlabirinth();
-            GenerateItemsInLabirinth();
-            m_user = new Player(new DeafaultMove(m_labirinth));
-            UpdateView(rtb_List);
+            if (rtb_List.Count == 2 && rtb_List[0] != null && rtb_List[1] != null)
+            {
+                m_stateGame = 1;
+                m_labirinth = ReadWallsFromFileInlabirinth();
+                GenerateItemsInLabirinth();
+                m_user = new Player(new DeafaultMove(m_labirinth));
+                UpdateView(rtb_List);
+            }
         }
 
         public void Events(int stateCase, List<RichTextBox> rtb_List)
         {
-            if (m_user == null || m_user.Win != 0)
+            if (m_user == null || m_user.Win != 0 || rtb_List.Count == 0)
                 return;
             UpdateView(rtb_List);
             switch (stateCase)
