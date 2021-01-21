@@ -22,7 +22,8 @@ namespace Labyrinth.Game
         }
         public override void Interact(Player user)
         {
-            user.HealPoints += rnd.Next(-1, 2);
+            int add = rnd.Next(0, 2) == 0 ? -1 : 1;
+            user.HealPoints += add;
             user.Location = m_myLocation;
             m_labirinth[m_myLocation.x, m_myLocation.y] = null;
         }
