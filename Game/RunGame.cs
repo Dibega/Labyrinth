@@ -73,12 +73,12 @@ namespace Labyrinth.Game
         }
         private void UpdateStats(RichTextBox rtb)
         {
-            string line = string.Format("Состояние игрока\nЗдоровье: {0}\n",m_user.HealPoints);
+            string line = string.Format("Состояние игрока\nЗдоровье: {0}\n", m_user.HealPoints);
             if (m_user.Win == 1)
                 line += "Вы выиграли!";
             else if (m_user.Win == -1)
                 line += "Вы проиграли!";
-                rtb.Text = line;
+            rtb.Text = line;
         }
         private void UpdateLabitinthView(RichTextBox rtb_Labirinth)
         {
@@ -105,6 +105,7 @@ namespace Labyrinth.Game
                         line += "P";
                     }
                 }
+
                 line += "\n";
             }
             rtb_Labirinth.Text = line;
@@ -164,8 +165,8 @@ namespace Labyrinth.Game
         }
         private IInteractable GetOrNotRandomItem(PointLabirinth point)
         {
-            int i = m_rnd.Next(0, 3);
-            if (i == 2)
+            int i = m_rnd.Next(0, 101);
+            if (i <= 30)
             {
                 return GetRandomInteractableClass(point);
             }
@@ -177,7 +178,7 @@ namespace Labyrinth.Game
         }
         private IInteractable GetRandomInteractableClass(PointLabirinth point)
         {
-            int i = m_rnd.Next(0, 7);
+            int i = m_rnd.Next(0, 8);
             IInteractable obj = null;
 
             if (i == 1)
@@ -203,6 +204,10 @@ namespace Labyrinth.Game
             if (i == 6)
             {
                 obj = new God(point, m_labirinth);
+            }
+            if (i == 7)
+            {
+                obj = new Friend(point, m_labirinth);
             }
 
             return obj;
