@@ -23,10 +23,11 @@ namespace Labyrinth
 
         private void btn_GenerateLab_Click(object sender, EventArgs e)
         {
+            rtb_List.Clear();
             rtb_List.Add(rtb_Labirinth);
             rtb_List.Add(rtb_PlayerStats);
 
-            game.Events(5, rtb_List);
+            game.Init(rtb_List);
         }
         private void btn_Move_Up_Click(object sender, EventArgs e)
         {
